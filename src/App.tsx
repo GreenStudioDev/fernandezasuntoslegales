@@ -1,12 +1,12 @@
 import {
-  ArrowRight,
-  CaretDown,
-  EnvelopeSimple,
-  List,
-  MapPin,
-  Phone,
-  WhatsappLogo,
-  X,
+  ArrowRightIcon,
+  CaretDownIcon,
+  EnvelopeSimpleIcon,
+  ListIcon,
+  MapPinIcon,
+  PhoneIcon,
+  WhatsappLogoIcon,
+  XIcon,
 } from '@phosphor-icons/react'
 import {
   AnimatePresence,
@@ -63,14 +63,14 @@ function CtaPair({ large = false, className = '' }: { large?: boolean; className
         rel="noopener noreferrer"
         className={`inline-flex items-center justify-center gap-2 rounded-[2px] bg-accent font-medium text-accent-ink transition-opacity hover:opacity-90 ${pad}`}
       >
-        <WhatsappLogo weight="light" aria-hidden className="size-5" />
+        <WhatsappLogoIcon weight="light" aria-hidden className="size-5" />
         {cta.primary.label}
       </a>
       <a
         href={cta.secondary.href}
         className={`inline-flex items-center justify-center gap-2 rounded-[2px] border border-line font-medium text-ink transition-colors hover:border-accent ${pad}`}
       >
-        <Phone weight="light" aria-hidden className="size-5" />
+        <PhoneIcon weight="light" aria-hidden className="size-5" />
         {cta.secondary.label}
       </a>
     </div>
@@ -133,7 +133,7 @@ function Nav() {
           aria-expanded={open}
           className="rounded-[2px] p-1 text-ink lg:hidden"
         >
-          <List weight="light" className="size-7" />
+          <ListIcon weight="light" className="size-7" />
         </button>
       </Container>
 
@@ -146,7 +146,7 @@ function Nav() {
               aria-label="Cerrar menú"
               className="rounded-[2px] p-1 text-ink"
             >
-              <X weight="light" className="size-7" />
+              <XIcon weight="light" className="size-7" />
             </button>
           </Container>
           <Container className="flex flex-1 flex-col justify-center gap-10 pb-24">
@@ -230,7 +230,7 @@ function Hero() {
               className="inline-flex w-fit items-center gap-2 text-sm text-muted underline-offset-4 transition-colors hover:text-ink hover:underline"
             >
               {hero.anchorLabel}
-              <ArrowRight weight="light" aria-hidden className="size-4" />
+              <ArrowRightIcon weight="light" aria-hidden className="size-4" />
             </a>
           </motion.div>
         </div>
@@ -350,7 +350,7 @@ function Areas() {
             <details key={area.id} className="group border-t border-line last:border-b">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-display text-xl text-ink [&::-webkit-details-marker]:hidden">
                 {area.title}
-                <CaretDown
+                <CaretDownIcon
                   weight="light"
                   aria-hidden
                   className="size-5 shrink-0 text-muted transition-transform group-open:rotate-180"
@@ -467,7 +467,7 @@ function Closing() {
                   href={contact.emailHref}
                   className="inline-flex items-center gap-2 text-base text-ink underline-offset-4 hover:underline"
                 >
-                  <EnvelopeSimple weight="light" aria-hidden className="size-5" />
+                  <EnvelopeSimpleIcon weight="light" aria-hidden className="size-5" />
                   {contact.email}
                 </a>
               </dd>
@@ -481,7 +481,7 @@ function Closing() {
                   href={contact.phoneHref}
                   className="inline-flex items-center gap-2 text-base tabular-nums text-ink underline-offset-4 hover:underline"
                 >
-                  <Phone weight="light" aria-hidden className="size-5" />
+                  <PhoneIcon weight="light" aria-hidden className="size-5" />
                   {contact.phoneDisplay}
                 </a>
               </dd>
@@ -499,7 +499,7 @@ function Footer() {
       {/* Móvil: pila. Desktop: fila. */}
       <Container className="flex flex-col gap-6 text-sm text-muted md:flex-row md:items-start md:justify-between">
         <p className="flex max-w-[40ch] items-start gap-2">
-          <MapPin weight="light" aria-hidden className="mt-0.5 size-4 shrink-0" />
+          <MapPinIcon weight="light" aria-hidden className="mt-0.5 size-4 shrink-0" />
           <span>
             {contact.city}. {contact.coverage}
           </span>
