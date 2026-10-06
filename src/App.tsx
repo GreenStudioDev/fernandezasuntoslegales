@@ -3,7 +3,6 @@ import {
   CaretDownIcon,
   EnvelopeSimpleIcon,
   InstagramLogoIcon,
-  LinkedinLogoIcon,
   ListIcon,
   MapPinIcon,
   PhoneIcon,
@@ -35,12 +34,12 @@ import {
   profile,
   social,
   value,
+  videos,
 } from './content'
 
 const SOCIAL_ICONS = {
   instagram: InstagramLogoIcon,
   tiktok: TiktokLogoIcon,
-  linkedin: LinkedinLogoIcon,
 } as const
 
 const EASE = [0.22, 1, 0.36, 1] as const
@@ -455,6 +454,54 @@ function Profile() {
   )
 }
 
+function Videos() {
+  const reduced = useReducedMotion()
+  return (
+    <section id="videos" className="border-t border-line py-24 md:py-32">
+      <Container>
+        <motion.h2
+          {...reveal(reduced)}
+          className="max-w-[18ch] font-display text-3xl leading-tight text-ink md:text-4xl"
+        >
+          {videos.title}
+        </motion.h2>
+
+        {/* Móvil: carrusel horizontal con snap. Desktop: 3 columnas. */}
+        <ul className="-mx-6 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-4 md:mx-0 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:px-0 md:pb-0">
+          {videos.items.map((v, i) => (
+            <motion.li
+              key={v.id}
+              {...reveal(reduced, i * 0.08)}
+              className="@container w-[80%] shrink-0 snap-center md:w-auto"
+            >
+              {/* El embed de Instagram mide ~1.25x su ancho (video 4:5) más ~200px de cabecera y pie. */}
+              <iframe
+                src={`https://www.instagram.com/p/${v.id}/embed/`}
+                title={`Video: ${v.title}`}
+                loading="lazy"
+                allow="encrypted-media; picture-in-picture"
+                className="h-[calc(125cqw+200px)] w-full rounded-[2px] border border-line bg-surface"
+              />
+              <p className="mt-4 text-base text-ink">{v.title}</p>
+            </motion.li>
+          ))}
+        </ul>
+
+        <a
+          href={videos.moreHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-10 inline-flex items-center gap-2 text-sm text-ink underline-offset-4 hover:underline"
+        >
+          <InstagramLogoIcon weight="light" aria-hidden className="size-5" />
+          {videos.moreLabel}
+          <ArrowRightIcon weight="light" aria-hidden className="size-4" />
+        </a>
+      </Container>
+    </section>
+  )
+}
+
 function Closing() {
   const reduced = useReducedMotion()
   return (
@@ -589,6 +636,7 @@ export default function App() {
         <Areas />
         <Method />
         <Profile />
+        <Videos />
         <Closing />
       </main>
       <Footer />

@@ -43,11 +43,6 @@ export const social = [
     label: 'TikTok',
     href: 'https://www.tiktok.com/@fernandezasuntosl',
   },
-  {
-    id: 'linkedin',
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/company/fernandezasuntoslegales',
-  },
 ] as const
 
 /** Par fijo de CTAs. Mismas etiquetas en nav, hero y contacto. */
@@ -183,6 +178,18 @@ export const profile = {
     'Sustanciador en la Rama Judicial',
     'Consultor del BID',
     'Asesor en entidades públicas y privadas',
+  ],
+} as const
+
+/** Reels de Instagram. Para cambiar un video basta con el código de la URL (/p/<id>/). */
+export const videos = {
+  title: 'Respuestas breves a preguntas frecuentes.',
+  moreLabel: 'Ver más en Instagram',
+  moreHref: 'https://www.instagram.com/fernandezasuntoslegales',
+  items: [
+    { id: 'DeEzsZEAKW4', title: 'Sucesiones sin testamento' },
+    { id: 'DeC8R_9gqtz', title: 'Unión marital de hecho' },
+    { id: 'DeCxcciAOAk', title: 'Cálculo de la cuota de alimentos' },
   ],
 } as const
 
