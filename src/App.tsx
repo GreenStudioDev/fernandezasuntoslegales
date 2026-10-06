@@ -2,9 +2,12 @@ import {
   ArrowRightIcon,
   CaretDownIcon,
   EnvelopeSimpleIcon,
+  InstagramLogoIcon,
+  LinkedinLogoIcon,
   ListIcon,
   MapPinIcon,
   PhoneIcon,
+  TiktokLogoIcon,
   WhatsappLogoIcon,
   XIcon,
 } from '@phosphor-icons/react'
@@ -16,6 +19,8 @@ import {
   useScroll,
 } from 'motion/react'
 import { useEffect, useState, type ReactNode } from 'react'
+import portraitHero from './assets/Asesoria-legal.webp'
+import portraitProfile from './assets/servicios-juridicos.webp'
 import { ImageSlot } from './components/ImageSlot'
 import {
   areas,
@@ -28,8 +33,15 @@ import {
   nav,
   person,
   profile,
+  social,
   value,
 } from './content'
+
+const SOCIAL_ICONS = {
+  instagram: InstagramLogoIcon,
+  tiktok: TiktokLogoIcon,
+  linkedin: LinkedinLogoIcon,
+} as const
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
@@ -187,17 +199,18 @@ function Hero() {
         {/* Móvil: retrato primero y cuadrado. Desktop: columna derecha 4:5. */}
         <div className="order-1 lg:order-2 lg:col-span-5">
           <motion.div {...step(0)} className="mx-auto w-[min(52vw,11rem)] lg:hidden">
-            {/* TODO: reemplazar por portrait-hero.jpg, mínimo 1600px de alto (4:5) */}
             <ImageSlot
+              src={portraitHero}
               ratio="1/1"
               priority
+              className="object-[50%_15%]"
               alt="Retrato profesional de Carlos Andrés Fernández Sánchez"
               label="Retrato profesional del abogado, recorte limpio, fondo neutro"
             />
           </motion.div>
           <motion.div {...step(0)} className="hidden lg:block">
-            {/* TODO: reemplazar por portrait-hero.jpg, mínimo 1600px de alto (4:5) */}
             <ImageSlot
+              src={portraitHero}
               ratio="4/5"
               priority
               alt="Retrato profesional de Carlos Andrés Fernández Sánchez"
@@ -331,8 +344,8 @@ function Areas() {
                 exit={reduced ? undefined : { opacity: 0 }}
                 transition={{ duration: 0.25, ease: EASE }}
               >
-                {/* TODO: reemplazar por src/assets/area-*.jpg, mínimo 1200x800px (3:2) */}
                 <ImageSlot
+                  src={active.image}
                   ratio="3/2"
                   alt={`Imagen de ambiente del área de ${active.title}`}
                   label={active.imageLabel}
@@ -357,8 +370,8 @@ function Areas() {
                 />
               </summary>
               <div className="pb-8">
-                {/* TODO: reemplazar por src/assets/area-*.jpg, mínimo 1200x800px (3:2) */}
                 <ImageSlot
+                  src={area.image}
                   ratio="3/2"
                   alt={`Imagen de ambiente del área de ${area.title}`}
                   label={area.imageLabel}
@@ -414,12 +427,12 @@ function Profile() {
     <section id="perfil" className="border-t border-line">
       {/* Móvil: foto arriba, texto debajo. Desktop: foto a sangre a la izquierda. */}
       <div className="grid lg:grid-cols-2">
-        {/* TODO: reemplazar por portrait-profile.jpg, mínimo 1800x1200px (3:2) */}
         <ImageSlot
+          src={portraitProfile}
           ratio="3/2"
           alt="Carlos Andrés Fernández Sánchez en su despacho"
           label="Segunda foto: despacho, escritorio o sala de audiencias"
-          className="h-full rounded-none border-x-0 border-t-0"
+          className="h-full rounded-none object-[60%_center]"
         />
         <motion.div {...reveal(reduced)} className="px-6 py-16 md:px-10 md:py-24 lg:px-14">
           <h2 className="font-display text-3xl leading-tight text-ink md:text-4xl">
@@ -459,7 +472,7 @@ function Closing() {
           <CtaPair large className="mt-10" />
 
           {/* Móvil: pila. Desktop: dos columnas. */}
-          <dl className="mt-12 grid gap-6 border-t border-line pt-8 sm:grid-cols-2">
+          <dl className="mt-12 grid gap-6 border-t border-line pt-8 sm:grid-cols-2 lg:grid-cols-3">
             <div>
               <dt className="text-xs uppercase tracking-[0.16em] text-muted">Correo</dt>
               <dd className="mt-2">
@@ -485,6 +498,25 @@ function Closing() {
                   {contact.phoneDisplay}
                 </a>
               </dd>
+            </div>
+            <div>
+              <dt className="text-xs uppercase tracking-[0.16em] text-muted">Redes</dt>
+              {social.map((s) => {
+                const Icon = SOCIAL_ICONS[s.id]
+                return (
+                  <dd key={s.id} className="mt-2">
+                    <a
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-base text-ink underline-offset-4 hover:underline"
+                    >
+                      <Icon weight="light" aria-hidden className="size-5" />
+                      {s.label}
+                    </a>
+                  </dd>
+                )
+              })}
             </div>
           </dl>
         </motion.div>
@@ -522,6 +554,19 @@ function Footer() {
             >
               WhatsApp {contact.phoneDisplay}
             </a>
+          </li>
+          <li className="flex gap-4 md:justify-end">
+            {social.map((s) => (
+              <a
+                key={s.id}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline-offset-4 hover:text-ink hover:underline"
+              >
+                {s.label}
+              </a>
+            ))}
           </li>
           <li className="tabular-nums">
             © {new Date().getFullYear()} {person.name}

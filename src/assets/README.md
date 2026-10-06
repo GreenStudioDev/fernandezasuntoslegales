@@ -1,19 +1,19 @@
-# Fotos pendientes
+# Fotos del sitio
 
-Al llegar cada archivo, colocarlo aquí, importarlo en `src/App.tsx` y pasarlo como
-`src` al `<ImageSlot>` que ya tiene el `TODO` correspondiente. El placeholder
-desaparece solo; no hay que tocar nada más.
+Todas conectadas (2026-10-06). Los retratos se importan en `src/App.tsx`; las de área,
+en `src/content.ts` (campo `image` de cada área). Para cambiar una foto basta con
+reemplazar el archivo manteniendo el nombre.
 
-| Archivo | Uso | Proporción | Mínimo |
+| Archivo | Uso | Proporción en pantalla | Tamaño actual |
 |---|---|---|---|
-| `portrait-hero.jpg` | Hero | 4:5 | 1600px de alto |
-| `portrait-profile.jpg` | Perfil | 3:2 | 1800x1200px |
-| `area-disciplinario.jpg` | Área: derecho disciplinario | 3:2 | 1200x800px |
-| `area-educacion.jpg` | Área: educación superior y convalidaciones | 3:2 | 1200x800px |
-| `area-civil.jpg` | Área: civil, comercial y propiedad horizontal | 3:2 | 1200x800px |
-| `area-familia.jpg` | Área: familia y alimentos | 3:2 | 1200x800px |
-| `area-laboral.jpg` | Área: derecho laboral | 3:2 | 1200x800px |
-| `area-constitucional.jpg` | Área: acciones constitucionales | 3:2 | 1200x800px |
+| `Asesoria-legal.webp` | Hero (desktop 4:5, móvil recorte 1:1 anclado arriba) | 3:4 | 896x1200 |
+| `servicios-juridicos.webp` | Perfil | 3:2 | 1264x848 |
+| `derecho-disciplinario.webp` | Área: derecho disciplinario | 3:2 | 1264x848 |
+| `derecho-educacion.webp` | Área: educación superior y convalidaciones | 3:2 | 1264x848 |
+| `derecho-civil.webp` | Área: civil, comercial y propiedad horizontal | 3:2 | 1264x848 |
+| `derecho-familia.webp` | Área: familia y alimentos | 3:2 | 1264x848 |
+| `derecho-laboral.webp` | Área: derecho laboral | 3:2 | 1264x848 |
+| `derecho-constitucional.webp` | Área: acciones constitucionales | 3:2 | 1264x848 |
 
-Los retratos son fotos reales del abogado. Las seis imágenes de área son de ambiente
-(expedientes, códigos, sello, toga, sala vacía), sin personas.
+Los retratos son fotos reales del abogado (editadas, sin transformar). Las seis de área
+son de ambiente, sin personas. Prompts en `PROMPTS.md`.

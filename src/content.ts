@@ -1,12 +1,19 @@
 // Todo el texto visible del sitio. Fuente: brochure de Carlos Andres Fernandez Sanchez.
 // No agregar cifras, testimonios ni clientes: el brochure es la unica fuente.
 
+import disciplinarioImg from './assets/derecho-disciplinario.webp'
+import educacionImg from './assets/derecho-educacion.webp'
+import civilImg from './assets/derecho-civil.webp'
+import familiaImg from './assets/derecho-familia.webp'
+import laboralImg from './assets/derecho-laboral.webp'
+import constitucionalImg from './assets/derecho-constitucional.webp'
+
 export type Item = { title: string; body: string }
 
 export type Area = Item & {
   id: string
-  /** Nombre del archivo de imagen de ambiente pendiente (ver DESIGN.md, seccion 8). */
-  imageFile: string
+  /** Imagen de ambiente del área (ver DESIGN.md, sección 8). */
+  image: string
   imageLabel: string
 }
 
@@ -24,6 +31,24 @@ export const contact = {
   city: 'Bogotá D.C.',
   coverage: 'Cobertura de litigio y consultoría a nivel nacional en Colombia.',
 } as const
+
+export const social = [
+  {
+    id: 'instagram',
+    label: 'Instagram',
+    href: 'https://www.instagram.com/fernandezasuntoslegales',
+  },
+  {
+    id: 'tiktok',
+    label: 'TikTok',
+    href: 'https://www.tiktok.com/@fernandezasuntosl',
+  },
+  {
+    id: 'linkedin',
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/fernandezasuntoslegales',
+  },
+] as const
 
 /** Par fijo de CTAs. Mismas etiquetas en nav, hero y contacto. */
 export const cta = {
@@ -88,42 +113,42 @@ export const areas = {
       id: 'disciplinario',
       title: 'Derecho disciplinario',
       body: 'Defensa técnica de servidores públicos, exfuncionarios y contratistas (Ley 1952 de 2019 y Ley 2094 de 2021); defensa de abogados en procesos disciplinarios (Ley 1123 de 2007); formulación e impulso de denuncias.',
-      imageFile: 'area-disciplinario.jpg',
+      image: disciplinarioImg,
       imageLabel: 'Ambiente: expedientes disciplinarios sobre escritorio',
     },
     {
       id: 'educacion',
       title: 'Educación superior y convalidaciones',
       body: 'Convalidación de títulos extranjeros (Res. 10687 de 2019), recursos de reposición y apelación, Registro Calificado, acreditación y creación de IES.',
-      imageFile: 'area-educacion.jpg',
+      image: educacionImg,
       imageLabel: 'Ambiente: diplomas y sellos de apostilla',
     },
     {
       id: 'civil',
       title: 'Civil, comercial y propiedad horizontal',
       body: 'Contratos, litigios declarativos y ejecutivos, cobro de cartera, restituciones, conflictos societarios, impugnación de actas y trámites notariales.',
-      imageFile: 'area-civil.jpg',
+      image: civilImg,
       imageLabel: 'Ambiente: contratos firmados y códigos civiles',
     },
     {
       id: 'familia',
       title: 'Derecho de familia y alimentos',
       body: 'Divorcios, declaración de unión marital de hecho, liquidación de sociedad conyugal, sucesiones, custodia y filiación; procesos ejecutivos de alimentos y trámites notariales.',
-      imageFile: 'area-familia.jpg',
+      image: familiaImg,
       imageLabel: 'Ambiente: mesa de notaría con documentos',
     },
     {
       id: 'laboral',
       title: 'Derecho laboral',
       body: 'Asesoría y representación en conflictos laborales: contratos de trabajo, despidos y reintegros, liquidación de prestaciones e indemnizaciones, acoso laboral y procesos ordinarios laborales.',
-      imageFile: 'area-laboral.jpg',
+      image: laboralImg,
       imageLabel: 'Ambiente: código sustantivo del trabajo sobre archivador',
     },
     {
       id: 'constitucional',
       title: 'Acciones constitucionales',
       body: 'Tutelas, acciones populares, acciones de grupo y acciones de cumplimiento para la protección de derechos fundamentales y colectivos.',
-      imageFile: 'area-constitucional.jpg',
+      image: constitucionalImg,
       imageLabel: 'Ambiente: Constitución Política abierta en sala vacía',
     },
   ] satisfies Area[],
