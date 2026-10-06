@@ -19,6 +19,7 @@ import {
 } from 'motion/react'
 import { useEffect, useState, type ReactNode } from 'react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
+import { Analytics } from '@vercel/analytics/react'
 import portraitHero from './assets/Asesoria-legal.webp'
 import portraitProfile from './assets/servicios-juridicos.webp'
 import greenStudioLogo from './assets/greenstudiodev-logo.svg'
@@ -658,6 +659,7 @@ export default function App() {
       </main>
       <Footer />
       <SpeedInsights />
+      <Analytics />
     </>
   )
 }
