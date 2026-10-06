@@ -32,6 +32,13 @@ export const contact = {
   coverage: 'Cobertura de litigio y consultoría a nivel nacional en Colombia.',
 } as const
 
+/** Crédito del desarrollador, al pie del footer. */
+export const credit = {
+  lead: 'Sitio desarrollado por',
+  name: 'GreenStudioDev',
+  href: 'https://greenstudiodev.com',
+} as const
+
 export const social = [
   {
     id: 'instagram',

@@ -20,12 +20,14 @@ import {
 import { useEffect, useState, type ReactNode } from 'react'
 import portraitHero from './assets/Asesoria-legal.webp'
 import portraitProfile from './assets/servicios-juridicos.webp'
+import greenStudioLogo from './assets/greenstudiodev-logo.svg'
 import { ImageSlot } from './components/ImageSlot'
 import {
   areas,
   closing,
   contact,
   credentials,
+  credit,
   cta,
   hero,
   method,
@@ -620,6 +622,20 @@ function Footer() {
           </li>
           <li>{contact.site}</li>
         </ul>
+      </Container>
+      <Container className="mt-10 border-t border-line pt-6 text-xs text-muted">
+        <p className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
+          {credit.lead}
+          <a
+            href={credit.href}
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-1.5 text-ink underline-offset-4 hover:text-accent hover:underline"
+          >
+            <img src={greenStudioLogo} alt="" aria-hidden className="h-5 w-auto" />
+            {credit.name}
+          </a>
+        </p>
       </Container>
     </footer>
   )
