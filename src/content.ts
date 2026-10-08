@@ -27,7 +27,7 @@ export const contact = {
   whatsappHref: `https://wa.me/573043788679?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`,
   email: 'andresfernandez_875@outlook.com',
   emailHref: 'mailto:andresfernandez_875@outlook.com',
-  site: 'fernandezasuntoslegales.com',
+  site: 'www.fernandezasuntoslegales.com',
   city: 'Bogotá D.C.',
   coverage: 'Cobertura de litigio y consultoría a nivel nacional en Colombia.',
 } as const
