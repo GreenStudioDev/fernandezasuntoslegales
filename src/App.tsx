@@ -20,7 +20,7 @@ import {
 import { useEffect, useState, type ReactNode } from 'react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import { Analytics } from '@vercel/analytics/react'
-// import portraitHero from './assets/Asesoria-legal.webp'
+import portraitHero from './assets/portrait.webp'
 import portraitProfile from './assets/servicios-juridicos.webp'
 import greenStudioLogo from './assets/greenstudiodev-logo.svg'
 import { ImageSlot } from './components/ImageSlot'
@@ -203,7 +203,7 @@ function Hero() {
         <div className="order-1 lg:order-2 lg:col-span-5">
           <motion.div {...step(0)} className="mx-auto w-[min(52vw,11rem)] lg:hidden">
             <ImageSlot
-              // src={portraitHero}
+              src={portraitHero}
               ratio="1/1"
               priority
               className="object-[50%_15%]"
@@ -213,7 +213,7 @@ function Hero() {
           </motion.div>
           <motion.div {...step(0)} className="hidden lg:block">
             <ImageSlot
-              // src={portraitHero}
+              src={portraitHero}
               ratio="4/5"
               priority
               alt="Retrato profesional de Carlos Andrés Fernández Sánchez"
