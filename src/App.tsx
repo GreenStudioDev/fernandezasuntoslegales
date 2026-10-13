@@ -21,7 +21,7 @@ import { useEffect, useState, type ReactNode } from 'react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import { Analytics } from '@vercel/analytics/react'
 import portraitHero from './assets/portrait.webp'
-import portraitProfile from './assets/servicios-juridicos.webp'
+import portraitProfile from './assets/portrait.webp'
 import greenStudioLogo from './assets/greenstudiodev-logo.svg'
 import { ImageSlot } from './components/ImageSlot'
 import {
